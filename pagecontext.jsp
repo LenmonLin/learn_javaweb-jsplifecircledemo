@@ -27,7 +27,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         用户名是：<%=pageContext.getSession().getAttribute("name") %>
         <% 
                 //跳转到注册页面
-                pageContext.forward("page.jsp");       
+                //pageContext.forward("page.jsp");
+                pageContext.include("include.jsp");       
         %>
   </body>
 </html>
