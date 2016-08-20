@@ -23,7 +23,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-        <h1>恭喜xxx,登录成功</h1>
+  <%
+            String loginUser ="";
+            if(session.getAttribute("loginUser")!= null)
+            {
+                loginUser = session.getAttribute("loginUser").toString();
+            }
+   %>
+        <h1>恭喜<font color="red"><%=loginUser %></font>,登录成功</h1>
     	<br>
   </body>
 </html>

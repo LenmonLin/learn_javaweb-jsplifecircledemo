@@ -13,6 +13,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         
         if("admin".equals(username)&& "admin".equals(password))
         {
+            session.setAttribute("loginUser", username);  //注意这一行若放在request下一行，则不会执行，就无法显示username
+            
             request.getRequestDispatcher("login_success.jsp").forward(request, response);
         }
         else
